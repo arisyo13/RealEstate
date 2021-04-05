@@ -7,4 +7,6 @@ import androidx.room.PrimaryKey
 data class Property (
     @PrimaryKey(autoGenerate = true)
     val id: Int,
-    val zip: String) 
+    val zip: String,
+    val image: String,
+)
