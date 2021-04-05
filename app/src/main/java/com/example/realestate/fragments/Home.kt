@@ -29,14 +29,11 @@ class Home  : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val propertyAdapter = PropertyAdapter()
 
         binding.apply {
@@ -45,12 +42,9 @@ class Home  : Fragment() {
                 layoutManager = LinearLayoutManager(context)
             }
 
-            Log.i("binding", "works")
+            viewModel.properties.observe(viewLifecycleOwner, Observer { properties ->
 
-            viewModel.properties.observe(viewLifecycleOwner, Observer {
-                propertyAdapter.submitList(it)
-                Log.i("viewmodel", it.get(0).zip)
-
+                propertyAdapter.submitList(properties.data)
             })
         }
 

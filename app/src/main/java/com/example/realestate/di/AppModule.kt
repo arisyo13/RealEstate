@@ -1,6 +1,9 @@
 package com.example.realestate.di
 
+import android.app.Application
+import androidx.room.Room
 import com.example.realestate.api.PropertyApiService
+import com.example.realestate.data.PropertyDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,4 +27,10 @@ object AppModule {
     @Singleton
     fun providePropertyApi(retrofit: Retrofit): PropertyApiService =
         retrofit.create(PropertyApiService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideDatabase(app: Application): PropertyDatabase =
+        Room.databaseBuilder(app, PropertyDatabase::class.java, "property_database")
+            .build()
 }
