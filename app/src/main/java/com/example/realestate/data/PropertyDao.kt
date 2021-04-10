@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface PropertyDao {
 
-    @Query("SELECT * FROM property_table")
+    @Query("SELECT * FROM property_table ORDER BY price ASC")
     fun getAllProperties(): Flow<List<Property>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
