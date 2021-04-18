@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Real Estate</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="fragment1">Fragment 1</string>
+    <string name="appTitle">DTT</string>
     <string name="fragment2">Fragment 2</string>
+    <string name="propertyView">Property View</string>
+    <string name="baths">Bathrooms</string>
+    <string name="bedrooms">Bedrooms</string>
+    <string name="size">Size</string>
+    <string name="locationView">Location View</string>
 </resources>
