@@ -14,13 +14,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
         <ImageView
             android:id="@+id/property_image"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginStart="16dp"
+            android:contentDescription="@string/propertyView"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +32,7 @@
             android:id="@+id/zip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
             android:text="Zip"
             app:layout_constraintStart_toEndOf="@+id/property_image"
@@ -41,8 +42,7 @@
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
             android:text="price"
             app:layout_constraintStart_toEndOf="@+id/property_image"
             app:layout_constraintTop_toTopOf="parent" />
@@ -63,9 +63,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:text="0"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bathsView"
+            app:layout_constraintStart_toEndOf="@+id/bathsView"
+            app:layout_constraintTop_toTopOf="@+id/bathsView" />
 
         <TextView
             android:id="@+id/bathrooms"
@@ -73,9 +74,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:text="0"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bedsView"
+            app:layout_constraintStart_toEndOf="@+id/bedsView"
+            app:layout_constraintTop_toTopOf="@+id/bedsView" />
 
         <TextView
             android:id="@+id/size"
@@ -83,43 +85,48 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:text="0"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toTopOf="@+id/imageView3" />
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@+id/sizeView"
+            app:layout_constraintStart_toEndOf="@+id/sizeView"
+            app:layout_constraintTop_toTopOf="@+id/sizeView" />
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:id="@+id/bathsView"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="16dp"
+            android:contentDescription="@string/baths"
             app:layout_constraintBottom_toBottomOf="@+id/property_image"
             app:layout_constraintStart_toEndOf="@+id/property_image"
             app:srcCompat="@drawable/ic_bath" />
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/bedsView"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
             android:layout_marginStart="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            android:contentDescription="@string/bedrooms"
+            app:layout_constraintBottom_toBottomOf="@+id/bathsView"
             app:layout_constraintStart_toEndOf="@+id/bedrooms"
             app:srcCompat="@drawable/ic_bed" />
 
         <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/sizeView"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
             android:layout_marginStart="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            android:contentDescription="@string/size"
+            app:layout_constraintBottom_toBottomOf="@+id/bathsView"
             app:layout_constraintStart_toEndOf="@+id/bathrooms"
             app:srcCompat="@drawable/ic_layers" />
 
         <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/locationView"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
             android:layout_marginStart="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            android:contentDescription="@string/locationView"
+            app:layout_constraintBottom_toBottomOf="@+id/bathsView"
             app:layout_constraintStart_toEndOf="@+id/size"
             app:srcCompat="@drawable/ic_location" />
 
@@ -129,9 +136,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:text="Unknown"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-            app:layout_constraintStart_toEndOf="@+id/imageView4"
-            app:layout_constraintTop_toTopOf="@+id/imageView4" />
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@+id/locationView"
+            app:layout_constraintStart_toEndOf="@+id/locationView"
+            app:layout_constraintTop_toTopOf="@+id/locationView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
